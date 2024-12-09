@@ -14,7 +14,7 @@ const Banner = () => {
                 <img
                     src={img1}
                     className="w-full rounded-xl" />
-                <div className="absolute h-full left-0 items-center top-0 flex bg-gradient-to-r from-[#151515] to-[rgb(21, 21, 0)]">
+                <div className="absolute rounded-xl h-full left-0 items-center top-0 flex bg-gradient-to-r from-[#151515] to-[rgb(21, 21, 0)]">
                     <div className='text-white space-y-7 w-1/3 pl-12'>
                         <h1 className='text-6xl font-bold'>Affordable Price For Car Servicing</h1>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
@@ -44,7 +44,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className="absolute left-5 right-5 bottom-0 flex -translate-y-1/2 transform justify-end">
-                    <a href="#slide2" className="btn btn-circle mr-5">❮</a>
+                    <a href="#slide1" className="btn btn-circle mr-5">❮</a>
                     <a href="#slide3" className="btn btn-circle">❯</a>
                 </div>
             </div>
@@ -63,7 +63,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className="absolute left-5 right-5 bottom-0 flex -translate-y-1/2 transform justify-end">
-                    <a href="#slide3" className="btn btn-circle mr-5">❮</a>
+                    <a href="#slide2" className="btn btn-circle mr-5">❮</a>
                     <a href="#slide4" className="btn btn-circle">❯</a>
                 </div>
             </div>
@@ -82,7 +82,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className="absolute left-5 right-5 bottom-0 flex -translate-y-1/2 transform justify-end">
-                    <a href="#slide4" className="btn btn-circle mr-5">❮</a>
+                    <a href="#slide3" className="btn btn-circle mr-5">❮</a>
                     <a href="#slide5" className="btn btn-circle">❯</a>
                 </div>
             </div>
@@ -101,7 +101,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className="absolute left-5 right-5 bottom-0 flex -translate-y-1/2 transform justify-end">
-                    <a href="#slide5" className="btn btn-circle mr-5">❮</a>
+                    <a href="#slide4" className="btn btn-circle mr-5">❮</a>
                     <a href="#slide6" className="btn btn-circle">❯</a>
                 </div>
             </div>
@@ -120,7 +120,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className="absolute left-5 right-5 bottom-0 flex -translate-y-1/2 transform justify-end">
-                    <a href="#slide6" className="btn btn-circle mr-5">❮</a>
+                    <a href="#slide5" className="btn btn-circle mr-5">❮</a>
                     <a href="#slide1" className="btn btn-circle">❯</a>
                 </div>
             </div>
