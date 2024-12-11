@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import img from '../assets/images/login/login.svg'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext)
+    const [error, setError] = useState()
     const handleSignUp = event => {
         event.preventDefault()
         const form = event.target;
@@ -19,8 +20,9 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user);
             })
-            .then(error => {
-                // const error = error.massage
+            .catch(error => {
+                // const error = error.code
+                    // setError(error)
                 console.log(error);
 
             })
@@ -64,6 +66,7 @@ const SignUp = () => {
                         </div>
                     </form>
                     <p className='text-center my-4'>Already have an account? <Link to='/signin' className='text-orange-500 font-bold'>Signin</Link></p>
+                    {/* <p>{error}</p> */}
                 </div>
             </div>
         </div>
