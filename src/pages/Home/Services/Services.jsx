@@ -1,14 +1,15 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { data } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
     const [services, setServices] = useState([])
 
-    useEffect(()=>{
+
+    useEffect(() => {
         fetch('http://localhost:3000/services')
-        .then(res => res.json())
-        .then(data => setServices(data))
+            .then(res => res.json())
+            .then(data => setServices(data))
     }, [])
     return (
         <div className='mt-4'>
@@ -19,8 +20,8 @@ const Services = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {services.map(service => <ServiceCard
-                key={service._id}
-                service={service}
+                    key={service._id}
+                    service={service}
                 ></ServiceCard>)}
             </div>
         </div>

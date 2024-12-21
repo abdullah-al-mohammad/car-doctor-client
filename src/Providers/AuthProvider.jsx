@@ -21,16 +21,16 @@ const AuthProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    const unsubdCribe = onAuthStateChanged(auth, currentUser =>{
+    const unsubsCribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser)
       console.log(currentUser);
       setLoading(false)
-      
+
     })
     return () => {
-      return unsubdCribe()
+      return unsubsCribe()
     }
-  },[])
+  }, [])
 
   const authInf = {
     user,
