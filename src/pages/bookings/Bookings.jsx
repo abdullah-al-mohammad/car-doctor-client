@@ -4,15 +4,14 @@ import { BookingRow } from "./BookingRow";
 
 const Bookings = () => {
 	const { user } = useContext(AuthContext);
-	const [bookings, setBookings] = useState();
-    console.log(bookings);
-    
+	const [bookings, setBookings] = useState([]);
+	console.log(bookings);
+
 	const url = `http://localhost:3000/bookings?email=${user?.email}`;
 	useEffect(() => {
 		fetch(url)
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
 				setBookings(data);
 			});
 	}, []);
@@ -36,12 +35,12 @@ const Bookings = () => {
 						</tr>
 					</thead>
 					<tbody>
-                        {
-                            bookings.map(booking => <BookingRow 
-                                key={booking._id}
-                                booking={booking}
-                                ></BookingRow>)
-                        }
+						{
+							bookings.map(booking => <BookingRow
+								key={booking._id}
+								booking={booking}
+							></BookingRow>)
+						}
 					</tbody>
 				</table>
 			</div>
