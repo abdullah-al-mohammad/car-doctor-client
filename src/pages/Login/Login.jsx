@@ -1,22 +1,25 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from '../../assets/images/login/login.svg'
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
     const { logInUser } = useContext(AuthContext)
-    const handleSignUP = event => {
+    const location = useLocation()
+
+    const navigate = useNavigate()
+
+    const handleSignIn = event => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         const formData = { email, password }
-        console.log(formData);
 
         logInUser(email, password)
             .then(result => {
                 const user = result.user
-                console.log(user);
+                navigate(location?.state ? location?.state : '/')
             })
             .catch(error => {
                 // const error = error.massage;
@@ -32,7 +35,7 @@ const Login = () => {
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border">
                     <h1 className="text-2xl font-bold text-center pt-4">Login</h1>
-                    <form onSubmit={handleSignUP} className="card-body">
+                    <form onSubmit={handleSignIn} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
