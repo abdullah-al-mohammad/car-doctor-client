@@ -22,7 +22,7 @@ const Login = () => {
                 // navigate(location?.state ? location?.state : '/')
                 const user = { email }
 
-                // get access token
+                // get access token in cookie
                 axios.post('http://localhost:3000/jwt', user, {
                     withCredentials: true
                 })

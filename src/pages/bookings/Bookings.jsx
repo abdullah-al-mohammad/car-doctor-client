@@ -9,6 +9,8 @@ const Bookings = () => {
 
 	const url = `http://localhost:3000/bookings?email=${user?.email}`;
 	useEffect(() => {
+
+		// send cookie in backend
 		axios.get(url, { withCredentials: true })
 			.then(res => {
 				setBookings(res.data)
