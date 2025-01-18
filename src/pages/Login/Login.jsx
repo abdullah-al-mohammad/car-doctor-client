@@ -1,11 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from '../../assets/images/login/login.svg'
-import { useContext } from 'react';
-import { AuthContext } from '../../Providers/AuthProvider';
+// import { useContext } from 'react';
+// import { AuthContext } from '../../Providers/AuthProvider';
 import axios from "axios";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
-    const { logInUser } = useContext(AuthContext)
+    // const { logInUser } = useContext(AuthContext)
+    const { logInUser } = useAuth()
     const location = useLocation()
 
     const navigate = useNavigate()
@@ -18,21 +20,7 @@ const Login = () => {
 
         logInUser(email, password)
             .then(result => {
-                const loggedInUser = result.user
-                // navigate(location?.state ? location?.state : '/')
-                const user = { email }
-
-                // get access token in cookie
-                axios.post('http://localhost:3000/jwt', user, {
-                    withCredentials: true
-                })
-                    .then(res => {
-                        console.log(res.data);
-                        if (res.data.success) {
-                            navigate(location?.state ? location?.state : '/')
-                        }
-
-                    })
+                navigate(location?.state ? location?.state : '/')
             })
             .catch(error => {
                 // const error = error.massage;
