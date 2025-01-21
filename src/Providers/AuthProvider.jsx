@@ -32,15 +32,15 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser)
       setLoading(false)
       if (currentUser) {
-        axios.post('http://localhost:3000/jwt', loggedInUser, { withCredentials: true })
+        axios.post('https://cardoctor-bdserver-delta.vercel.app//jwt', loggedInUser, { withCredentials: true })
           .then(res => {
-            console.log('token respons', res.data);
+            console.log('token response');
 
           })
       } else { // for clear cookie
-        axios.post('http://localhost:3000/logout', loggedInUser, { withCredentials: true })
+        axios.post('https://cardoctor-bdserver-delta.vercel.app//logout', loggedInUser, { withCredentials: true })
           .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
 
           })
       }

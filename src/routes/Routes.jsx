@@ -27,7 +27,7 @@ const router = createBrowserRouter([
          {
             path: '/book/:id',
             element: <PrivateRout><BookService></BookService></PrivateRout>,
-            loader: ({ params }) => fetch(`http://localhost:3000/services/${params.id}`)
+            loader: ({ params }) => fetch(`https://cardoctor-bdserver-delta.vercel.app//services/${params.id}`)
          },
          {
             path: '/bookings',

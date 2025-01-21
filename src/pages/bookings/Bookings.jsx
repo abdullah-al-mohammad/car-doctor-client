@@ -3,18 +3,23 @@ import { useContext, useEffect, useState } from "react";
 import { BookingRow } from "./BookingRow";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const Bookings = () => {
     const { user } = useAuth();
     const [bookings, setBookings] = useState([]);
+    const axiosSecure = useAxiosSecure()
 
-    const url = `http://localhost:3000/bookings?email=${user?.email}`;
+    // const url = `https://cardoctor-bdserver-delta.vercel.app//bookings?email=${user?.email}`;
+    const url = `/bookings?email=${user?.email}`;
     useEffect(() => {
 
         // send cookie in backend
-        axios.get(url, { withCredentials: true })
+        axiosSecure.get(url,)
             .then(res => {
                 setBookings(res.data)
+                // console.log(res.data);
+
             })
         // fetch(url)
         // 	.then(res => res.json())
@@ -26,7 +31,7 @@ const Bookings = () => {
     const handleDelete = id => {
         const proceed = confirm('Are You Sure You Want To Delete')
         if (proceed) {
-            fetch(`http://localhost:3000/bookings/${id}`, {
+            fetch(`https://cardoctor-bdserver-delta.vercel.app//bookings/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -42,7 +47,7 @@ const Bookings = () => {
     }
 
     const handleBookingConfirm = id => {
-        fetch(`http://localhost:3000/bookings/${id}`, {
+        fetch(`https://cardoctor-bdserver-delta.vercel.app//bookings/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

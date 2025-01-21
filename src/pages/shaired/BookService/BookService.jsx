@@ -24,7 +24,7 @@ const BookService = () => {
             price: price
         }
 
-        fetch('http://localhost:3000/bookings', {
+        fetch('https://cardoctor-bdserver-delta.vercel.app//bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

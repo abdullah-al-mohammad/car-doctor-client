@@ -13,16 +13,16 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value
         const formData = { name, email, password }
-        console.log(formData);
+        // console.log(formData);
 
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
             })
             .catch(error => {
                 // const error = error.code
-                    // setError(error)
+                // setError(error)
                 console.log(error);
 
             })
